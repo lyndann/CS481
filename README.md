@@ -1,6 +1,6 @@
-## Bittles - CS 481 Project
+## 👾 Bittles - CS 481 Project
 
 
-## Framework:
+## 📲 Framework:
 - Kotlin
 - Android Studios
