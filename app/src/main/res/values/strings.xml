@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CS481</string>
+    <string name="Bittles">Bittles</string>
+    <string name="txBittlesName">txBittlesName</string>
 </resources>
