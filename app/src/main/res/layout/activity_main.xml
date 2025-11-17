@@ -4,32 +4,76 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F8FF"
+    android:background="@color/white"
     tools:context=".HomeActivity">
 
-    <!-- Background area -->
-    <FrameLayout
+    <!-- Top area with animated character + hunger + mood + choose button -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_weight="1"
-        android:gravity="center">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1">
 
-        <!-- Background image (house & trees) -->
+        <!-- Selected Character GIF -->
 
+        <!-- Hunger Label -->
 
-        <!-- Bittle character in center -->
+        <!-- Hunger Bar -->
+
+        <TextView
+            android:id="@+id/tvHungerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Hunger:"
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/homeHungerBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="10dp"
+            android:max="100" />
+
+        <!-- Mood Label -->
+        <TextView
+            android:id="@+id/tvMoodLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mood:"
+            android:textSize="18sp" />
+
+        <!-- Mood Status -->
+        <TextView
+            android:id="@+id/tvMoodStatusHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🙂 Normal"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp" />
+
         <ImageView
-            android:id="@+id/bittleCharacter"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:contentDescription="Bittle character"
-            android:src="@drawable/ic_bittle" />
-    </FrameLayout>
+            android:id="@+id/selectedCharacterImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerInside" />
+
+
+        <!-- Choose Character Button -->
+        <Button
+            android:id="@+id/chooseCharacterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Character"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
 
     <!-- Task section -->
-
-    <!-- Bottom Navigation with custom icons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +81,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Task Buttons -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,56 +126,11 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#DAD0FF"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Home"
-            android:drawableTop="@drawable/ic_home"
-            android:drawableTint="#4A4A4A"
-            android:backgroundTint="#E5DAFF"
-            android:textColor="#000000"
-            android:gravity="center" />
-
-        <Button
-            android:id="@+id/btnPlay"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Play"
-            android:drawableTop="@drawable/ic_play"
-            android:drawableTint="#4A4A4A"
-            android:backgroundTint="#E5DAFF"
-            android:textColor="#000000"
-            android:gravity="center" />
-
-        <Button
-            android:id="@+id/btnFood"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Food"
-            android:drawableTop="@drawable/ic_food"
-            android:drawableTint="#4A4A4A"
-            android:backgroundTint="#E5DAFF"
-            android:textColor="#000000"
-            android:gravity="center" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/txDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="16sp" />
-
 
 </LinearLayout>

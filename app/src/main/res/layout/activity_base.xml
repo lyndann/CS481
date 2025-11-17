@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ALL SCREEN CONTENT GOES HERE -->
+    <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- SHARED BOTTOM NAVIGATION BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#DAD0FF"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:backgroundTint="#E5DAFF"
+            android:drawableTop="@drawable/ic_home"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Play"
+            android:backgroundTint="#E5DAFF"
+            android:drawableTop="@drawable/ic_play"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btnFood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Food"
+            android:backgroundTint="#E5DAFF"
+            android:drawableTop="@drawable/ic_food"
+            android:textColor="#000" />
+    </LinearLayout>
+
+</LinearLayout>
