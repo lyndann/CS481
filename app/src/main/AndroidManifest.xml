@@ -10,30 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CS481">
 
-        <!-- Character Select Screen -->
         <activity
             android:name=".CharacterSelectActivity"
             android:exported="false" />
 
-        <!-- Home Screen (Launcher) -->
         <activity
             android:name=".HomeActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
 
         <activity android:name=".PlayMenuActivity" />
         <activity android:name=".BasketGameActivity" />
         <activity android:name=".SlotGameActivity" />
         <activity android:name=".FoodActivity" />
-
+        <activity android:name=".TasksActivity" />
 
     </application>
+
 
 </manifest>

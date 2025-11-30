@@ -10,38 +10,37 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title -->
+        <!-- Title / Header -->
         <TextView
-            android:id="@+id/tvFoodTitle"
+            android:id="@+id/tvTasksTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🍓 Bittle's Café"
+            android:text="🌸 Daily Tasks"
             android:textSize="26sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvFoodSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Feed Bittle to keep it happy and full!"
+            android:text="Keep Bittle happy by clearing your quests!"
             android:textSize="14sp"
-            android:textColor="#666666"
             android:layout_gravity="center_horizontal"
+            android:textColor="#666666"
             android:layout_marginBottom="12dp" />
 
-        <!-- Stats card -->
+        <!-- Cute stats card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_task_card"
             android:orientation="vertical"
             android:padding="12dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="12dp">
 
             <TextView
-                android:id="@+id/tvTokenCountFood"
+                android:id="@+id/tvTokenCountTasks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tokens: 0"
@@ -49,38 +48,28 @@
                 android:textColor="#4B3B63" />
 
             <TextView
-                android:id="@+id/tvHungerLabelFood"
+                android:id="@+id/tvLevelTasks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hunger:"
+                android:text="Level 1 (XP: 0)"
                 android:textSize="16sp"
-                android:textColor="#4B3B63"
-                android:layout_marginTop="8dp" />
-
-            <ProgressBar
-                android:id="@+id/foodHungerBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:max="100"
-                android:progress="80"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/tvMoodStatusFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="😄 Happy"
-                android:textSize="18sp"
                 android:textColor="#4B3B63" />
 
-            <!-- Food popup -->
             <TextView
-                android:id="@+id/tvFoodPopup"
+                android:id="@+id/tvTasksTrackerTasks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+10 hunger!"
+                android:text="Tasks completed today: 0/3"
+                android:textSize="15sp"
+                android:textColor="#7A6A92"
+                android:layout_marginTop="4dp" />
+
+            <!-- Token popup inside card -->
+            <TextView
+                android:id="@+id/tvTokenPopupTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+10 tokens!"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#2E7D32"
@@ -88,17 +77,18 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
-        <!-- Bittle image (optional, can show same GIF as Home) -->
-        <TextView
+        <!-- Reset button -->
+        <Button
+            android:id="@+id/btnResetTasks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today’s Menu"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#4B3B63"
-            android:layout_marginBottom="8dp" />
+            android:text="Reset today&#39;s tasks"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#E5DAFF"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
 
-        <!-- SNACK CARD -->
+        <!-- TASK 1 CARD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,30 +100,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🍪 Small Snack"
-                android:textSize="16sp"
+                android:text="Task 1 🌱"
                 android:textStyle="bold"
-                android:textColor="#4B3B63" />
+                android:textSize="16sp"
+                android:textColor="#4B3B63"
+                android:layout_marginBottom="4dp" />
 
-            <TextView
+            <EditText
+                android:id="@+id/etTask1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Rest up, stretch, drink water"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="4dp"
+                android:textColorHint="#AA88AA" />
+
+            <CheckBox
+                android:id="@+id/cbTask1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+10 Hunger • Cost: 5 tokens"
-                android:textSize="14sp"
-                android:textColor="#7A6A92"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="6dp" />
-
-            <Button
-                android:id="@+id/btnSnack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed Snack"
-                android:backgroundTint="#E5DAFF"
-                android:textColor="#000000" />
+                android:text="✅ Mark as done"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- MEAL CARD -->
+        <!-- TASK 2 CARD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -145,30 +136,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🍛 Full Meal"
-                android:textSize="16sp"
+                android:text="Task 2 🎮"
                 android:textStyle="bold"
-                android:textColor="#4B3B63" />
+                android:textSize="16sp"
+                android:textColor="#4B3B63"
+                android:layout_marginBottom="4dp" />
 
-            <TextView
+            <EditText
+                android:id="@+id/etTask2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Play Slot Game once"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="4dp"
+                android:textColorHint="#AA88AA" />
+
+            <CheckBox
+                android:id="@+id/cbTask2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+25 Hunger • Cost: 10 tokens"
-                android:textSize="14sp"
-                android:textColor="#7A6A92"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="6dp" />
-
-            <Button
-                android:id="@+id/btnMeal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed Meal"
-                android:backgroundTint="#E5DAFF"
-                android:textColor="#000000" />
+                android:text="✅ Mark as done"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- FEAST CARD -->
+        <!-- TASK 3 CARD -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -180,27 +172,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🎂 Big Feast"
-                android:textSize="16sp"
+                android:text="Task 3 ⭐"
                 android:textStyle="bold"
-                android:textColor="#4B3B63" />
+                android:textSize="16sp"
+                android:textColor="#4B3B63"
+                android:layout_marginBottom="4dp" />
 
-            <TextView
+            <EditText
+                android:id="@+id/etTask3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Level up Bittle or complete a challenge"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="4dp"
+                android:textColorHint="#AA88AA" />
+
+            <CheckBox
+                android:id="@+id/cbTask3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+50 Hunger • Cost: 20 tokens"
-                android:textSize="14sp"
-                android:textColor="#7A6A92"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="6dp" />
-
-            <Button
-                android:id="@+id/btnFeast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed Feast"
-                android:backgroundTint="#E5DAFF"
-                android:textColor="#000000" />
+                android:text="✅ Mark as done"
+                android:textSize="14sp" />
         </LinearLayout>
 
     </LinearLayout>

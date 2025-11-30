@@ -1,136 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".HomeActivity">
 
-    <!-- Top area with animated character + hunger + mood + choose button -->
-    <LinearLayout
+    <!-- 🌸 ANIMATED BACKGROUND (your GIF) -->
+    <ImageView
+        android:id="@+id/homeBackgroundImage"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sky_background" />
 
-        <!-- Selected Character GIF -->
-
-        <!-- Hunger Label -->
-
-        <!-- Hunger Bar -->
-
-        <TextView
-            android:id="@+id/tvHungerLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Hunger:"
-            android:textSize="18sp" />
-
-        <ProgressBar
-            android:id="@+id/homeHungerBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="200dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="10dp"
-            android:max="100" />
-
-        <!-- Mood Label -->
-        <TextView
-            android:id="@+id/tvMoodLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mood:"
-            android:textSize="18sp" />
-
-        <!-- Mood Status -->
-        <TextView
-            android:id="@+id/tvMoodStatusHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🙂 Normal"
-            android:textSize="20sp"
-            android:layout_marginBottom="15dp" />
-
-        <ImageView
-            android:id="@+id/selectedCharacterImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerInside" />
-
-
-        <!-- Choose Character Button -->
-        <Button
-            android:id="@+id/chooseCharacterBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose Character"
-            android:layout_marginTop="12dp" />
-
-    </LinearLayout>
-
-
-    <!-- Task section -->
-    <LinearLayout
+    <!-- CONTENT OVERLAY -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         android:padding="16dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnTask1"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:backgroundTint="#E5DAFF"
-                android:drawableTop="@drawable/ic_home"
-                android:gravity="center"
-                android:text="Task 1"
-                android:textColor="#000000" />
+            <!-- HEADER -->
+            <TextView
+                android:id="@+id/tvHomeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏡 Bittle Home"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-rounded"
+                android:textColor="#4B3B63"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="4dp" />
 
-            <Button
-                android:id="@+id/btnTask2"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:backgroundTint="#E5DAFF"
-                android:drawableTop="@drawable/ic_play"
-                android:gravity="center"
-                android:text="Task 2"
-                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/tvHomeSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Take care of your Bittle and grow together!"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:textColor="#6D5A89"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="center_horizontal" />
 
+            <!-- TOP STATUS CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_task_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="18dp">
+
+                <!-- Selected Character GIF -->
+                <ImageView
+                    android:id="@+id/selectedCharacterImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="Character" />
+
+                <!-- Choose character button -->
+                <Button
+                    android:id="@+id/chooseCharacterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Character"
+                    android:backgroundTint="#E5DAFF"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-rounded"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp" />
+
+                <!-- Hunger -->
+                <TextView
+                    android:id="@+id/tvHungerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hunger"
+                    android:textColor="#4B3B63"
+                    android:fontFamily="sans-serif"
+                    android:textSize="16sp"
+                    android:layout_marginTop="14dp" />
+
+                <ProgressBar
+                    android:id="@+id/homeHungerBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:max="100"
+                    android:layout_marginTop="4dp" />
+
+                <!-- Mood -->
+                <TextView
+                    android:id="@+id/tvMoodLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mood"
+                    android:textColor="#4B3B63"
+                    android:fontFamily="sans-serif"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvMoodStatusHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🙂 Okay"
+                    android:textSize="20sp"
+                    android:textColor="#4B3B63"
+                    android:fontFamily="sans-serif-rounded"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Tokens -->
+                <TextView
+                    android:id="@+id/tvTokenCountHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tokens: 0"
+                    android:textSize="16sp"
+                    android:textColor="#4B3B63"
+                    android:fontFamily="sans-serif" />
+
+                <!-- Level -->
+                <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level 1 (XP: 0)"
+                    android:textSize="16sp"
+                    android:textColor="#4B3B63"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Tasks tracker -->
+                <TextView
+                    android:id="@+id/tvTasksTracker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tasks completed today: 0/3"
+                    android:textSize="15sp"
+                    android:textColor="#7A6A92"
+                    android:fontFamily="sans-serif" />
+
+                <!-- Token popup -->
+                <TextView
+                    android:id="@+id/tvTokenPopup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+10 tokens!"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:visibility="gone"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- SINGLE BUTTON TO OPEN TASKS PAGE -->
             <Button
-                android:id="@+id/btnTask3"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:backgroundTint="#E5DAFF"
-                android:drawableTop="@drawable/ic_food"
-                android:gravity="center"
-                android:text="Task 3"
-                android:textColor="#000000" />
+                android:id="@+id/btnOpenTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👾Open Daily Tasks👾"
+                android:backgroundTint="#FFD6F3"
+                android:fontFamily="sans-serif-rounded"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Optional status text -->
+            <TextView
+                android:id="@+id/txDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#4B3B63"
+                android:fontFamily="sans-serif" />
+
         </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/txDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="16sp" />
-
-</LinearLayout>
+    </ScrollView>
+</FrameLayout>

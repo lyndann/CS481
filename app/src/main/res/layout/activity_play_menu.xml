@@ -1,33 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F8FF"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="#FFF7FF">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose a Game"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnBasketGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Basket Game"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#E5DAFF" />
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvPlayTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 Play Time"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp" />
 
-    <Button
-        android:id="@+id/btnSlotGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Slot Game"
-        android:backgroundTint="#E5DAFF" />
+        <TextView
+            android:id="@+id/tvPlaySubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earn tokens and keep Bittle happy by playing!"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
 
-</LinearLayout>
+        <!-- Stats card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_task_card"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvTokenCountPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tokens: 0"
+                android:textSize="16sp"
+                android:textColor="#4B3B63" />
+
+            <TextView
+                android:id="@+id/tvPlayHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete your tasks to earn more tokens!"
+                android:textSize="13sp"
+                android:textColor="#7A6A92"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Basket Game card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_task_card"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🧺Basket Game"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#4B3B63"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flick shots into the basket to earn tokens. Great for quick warm-ups!"
+                android:textSize="14sp"
+                android:textColor="#7A6A92"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulty: ⭐⭐"
+                android:textSize="13sp"
+                android:textColor="#7A6A92"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btnBasketGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Basket Game"
+                android:backgroundTint="#E5DAFF"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Slot Game card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_task_card"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎰Slot Game"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#4B3B63"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spin the reels and match symbols to win big token rewards!"
+                android:textSize="14sp"
+                android:textColor="#7A6A92"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulty: ⭐⭐⭐"
+                android:textSize="13sp"
+                android:textColor="#7A6A92"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btnSlotGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Slot Game"
+                android:backgroundTint="#E5DAFF"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
